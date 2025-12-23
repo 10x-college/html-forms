@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap');
+
+:root {
+    --plasma-cyan: #00f2ff;
+    --void-purple: #7000ff;
+    --star-white: #ffffff;
+    --warning-orange: #ff8c00;
+}
+
+/* --- IFRAME SETUP --- */
+#bg-frame {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: none; z-index: -1; pointer-events: none; 
+}
+
+/* --- LAYOUT: LEFT SIDE --- */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: var(--plasma-cyan);
+    font-family: 'Space Grotesk', sans-serif;
+    
+    display: flex;
+    align-items: center; /* Center Vertically */
+    justify-content: flex-start; /* Push Form to Left */
+    padding-left: 8%; /* Space from left edge */
+    box-sizing: border-box;
+}
+
+/* --- FORM STYLING --- */
+form {
+    /* Solid dark background to prevent glitches */
+    background: rgba(10, 15, 30, 0.95); 
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    border-radius: 15px;
+    padding: 40px;
+    
+    /* WIDTH CONTROLS */
+    width: 100%;
+    max-width: 600px; /* Restored Width */
+    
+    /* Scroll if screen is too short */
+    max-height: 90vh;
+    overflow-y: auto;
+    
+    box-shadow: 0 0 50px rgba(0, 242, 255, 0.1), 
+                inset 0 0 20px rgba(112, 0, 255, 0.2);
+}
+
+/* CUSTOM SCROLLBAR for the form */
+form::-webkit-scrollbar { width: 8px; }
+form::-webkit-scrollbar-track { background: #0a0f1e; }
+form::-webkit-scrollbar-thumb { background: var(--void-purple); border-radius: 4px; }
+
+h1 {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(to right, var(--plasma-cyan), var(--void-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+legend {
+    background: var(--void-purple);
+    color: white;
+    padding: 3px 10px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* INPUTS */
+input, select, textarea {
+    border: none;
+    border-bottom: 1px solid var(--plasma-cyan);
+    background: rgba(0, 242, 255, 0.05);
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    background: rgba(0, 242, 255, 0.15);
+    border-bottom: 2px solid var(--star-white);
+}
+
+label {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* BUTTONS */
+button[type="submit"] {
+    background: linear-gradient(45deg, var(--plasma-cyan), var(--void-purple));
+    border: none; border-radius: 5px; color: white; padding: 15px;
+    font-family: 'Syncopate', sans-serif; font-weight: bold; cursor: pointer;
+    text-transform: uppercase; letter-spacing: 2px; width: 100%; margin-top: 10px;
+}
+
+button[type="reset"] {
+    background: transparent; border: 1px solid var(--warning-orange);
+    color: var(--warning-orange); margin-top: 10px; padding: 10px;
+    cursor: pointer; width: 100%; border-radius: 5px;
+}
