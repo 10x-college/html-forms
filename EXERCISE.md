@@ -152,20 +152,52 @@ We know about the WOW effect :)
 Once your form is complete and working, add these final touches:
 
 **Step 1: Add the CSS stylesheet link**
-- In the `<head>` section, after the `<title>` element
-- Create a `<link>` element (this is a self-closing tag)
-- Set the `rel` attribute to "stylesheet"
-- Set the `href` attribute to "./styles/styles.css"
+- In the `<head>` section, find the `<title>` element
+- Right AFTER the `</title>` closing tag, add this exact code:
+  ```html
+  <link rel="stylesheet" href="./styles/styles.css">
+  ```
+- Your code should look like this:
+  ```html
+      <title>Jovian Drift SOS</title>
+      <link rel="stylesheet" href="./styles/styles.css">
+  </head>
+  ```
 
 **Step 2: Add the animated background iframe**
-- In the `<body>` section, before your form element
-- Create an `<iframe>` element
-- Set the `id` attribute to "bg-frame"
-- Set the `src` attribute to "./styles/effect.html"
+- In the `<body>` section, find your opening `<form>` tag
+- Right BEFORE the `<form>` tag, add this exact code:
+  ```html
+  <iframe id="bg-frame" src="./styles/effect.html"></iframe>
+  ```
+- Your code should look like this:
+  ```html
+  <body>
+      <iframe id="bg-frame" src="./styles/effect.html"></iframe>
+      
+      <form method="post" action="#">
+  ```
+
+**Step 3: Add the launch control script**
+- In the `<body>` section, find the closing `</body>` tag (it should be the very last line of your HTML)
+- Right BEFORE the `</body>` tag, add this exact code:
+  ```html
+  <script src="./scripts/launch.js"></script>
+  ```
+- This script enables the interactive launch sequence when you submit the form
+- Your code should look like this at the end:
+  ```html
+      </form>
+      
+      <script src="./scripts/launch.js"></script>
+  </body>
+  </html>
+  ```
 
 **Important Notes:**
 - The CSS link must be in the `<head>` section (where all stylesheets go)
 - The iframe must be in the `<body>` section (only visible content goes here)
 - Make sure the iframe comes BEFORE your form in the body
+- The script must be placed at the END of the `<body>` section, right before the closing `</body>` tag (after your closing `</form>` tag)
 
-🎉 **Congratulations!** Your transmission interface is now operational with a stunning Jupiter background!
+🎉 **Congratulations!** Your transmission interface is now operational with a stunning Jupiter background and an interactive launch sequence!
